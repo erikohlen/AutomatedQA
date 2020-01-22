@@ -20,15 +20,18 @@ desired_cap = {
     'device': 'iPhone 8 Plus',
     'realMobile': 'true',
     'os_version': '11',
-    'name': 'Bstack-[Python] Sample Test'
+    'name': 'T50 Navigation Restructure - First qa test'
 }
 
-driver = webdriver.Remote(
-    command_executor='https://jonathankuronen1:wxhSDATwLPpk7KsxMTQF@hub-cloud.browserstack.com/wd/hub',
-    desired_capabilities=desired_cap)
+remote = True
 
-driver = webdriver.Chrome(
-    '/Users/erikohlen/C_local/chromedriver')
+if (remote == True):
+    driver = webdriver.Remote(
+        command_executor='https://jonathankuronen1:wxhSDATwLPpk7KsxMTQF@hub-cloud.browserstack.com/wd/hub',
+        desired_capabilities=desired_cap)
+
+if (remote == False):
+    driver = webdriver.Chrome('/Users/erikohlen/C_local/chromedriver')
 
 
 # Test starts here
@@ -39,14 +42,19 @@ driver.get("https://www.comviq.se")
 # if not "Google" in driver.title:
 #    raise Exception("Unable to load google page!")
 
-#elem = driver.find_element_by_tag_name('body')
+# elem = driver.find_element_by_tag_name('body')
 
-driver.add_cookie({"_gaexp": "GAX1.2.Fa6s-00FTIS_gAg5MxoMqg.18371.1"})
-
+driver.add_cookie(
+    {'name': '_gaexp',
+     'value': 'GAX1.2.Fa6s-00FTIS_gAg5MxoMqg.18371.1',
+     'domain': '.comviq.se'}
+)
 driver.get("https://www.comviq.se")
 
-#elem = driver.find_element_by_name("q")
+# elem = driver.find_element_by_name("q")
 # elem.send_keys("BrowserStack")
 # elem.submit()
 print(driver.title)
-# driver.quit()
+
+if (remote == True):
+    driver.quit()
