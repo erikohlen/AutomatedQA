@@ -1,20 +1,23 @@
 {
-  "user": "BROWSERSTACK_USERNAME",
-  "key": "BROWSERSTACK_ACCESS_KEY",
-
+  "user": "jonathankuronen1",
+  "key": "wxhSDATwLPpk7KsxMTQF",
   "capabilities": {
     "build": "behave-browserstack",
     "name": "parallel_test",
     "browserstack.debug": true
   },
-
-  "environments": [{
-    "browser": "chrome"
-  },{
-    "browser": "firefox"
-  },{
-    "browser": "safari"
-  },{
-    "browser": "internet explorer"
-  }]
+  "environments": [
+    {
+      "browser": "chrome"
+    },
+    {
+      "browser": "firefox"
+    },
+    {
+      "browser": "safari"
+    },
+    {
+      "browser": "internet explorer"
+    }
+  ]
 }

@@ -1,15 +1,15 @@
 {
-  "user": "BROWSERSTACK_USERNAME",
-  "key": "BROWSERSTACK_ACCESS_KEY",
-
+  "user": "jonathankuronen1",
+  "key": "wxhSDATwLPpk7KsxMTQF",
   "capabilities": {
     "build": "behave-browserstack",
     "name": "local_test",
     "browserstack.debug": true,
     "browserstack.local": true
   },
-
-  "environments": [{
-    "browser": "chrome"
-  }]
+  "environments": [
+    {
+      "browser": "chrome"
+    }
+  ]
 }

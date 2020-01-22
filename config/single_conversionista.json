@@ -1,0 +1,14 @@
+{
+  "user": "jonathankuronen1",
+  "key": "wxhSDATwLPpk7KsxMTQF",
+  "capabilities": {
+    "build": "behave-browserstack",
+    "name": "single_conversionista_test",
+    "browserstack.debug": true
+  },
+  "environments": [
+    {
+      "browser": "chrome"
+    }
+  ]
+}
