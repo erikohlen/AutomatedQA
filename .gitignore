@@ -1,2 +1,5 @@
 local.log
 **.pyc
+*.DS_store
+*.png
+*.mp4
