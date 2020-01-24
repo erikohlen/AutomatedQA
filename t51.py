@@ -89,7 +89,7 @@ def run_test(testname, landing_url, var, device, os_version, remote=False, ):
         """  url_to_filename = landing_url.replace(
              '.', '_').replace('https://', '').replace('/', '_') """
         print('trying to take screenshot: ' + testname +
-              ' - ' + url_to_filename + var + '.png')
+              ' - ' + format_url(landing_url) + var + '.png')
         driver.save_screenshot(
             testname + ' - ' + format_url(landing_url) + ' - ' + var + '.png')
         """ driver.save_screenshot(
@@ -113,15 +113,31 @@ variations = [
 ]
 
 devices = [
+    # Small list recommended by BrowserStack
     {"os_version": "11",
-     "device": "iPhone 8 Plus"}
+     "device": "iPhone 8"},
+
+    {"os_version": "9.0",
+     "device": "Google Pixel 3"},
+
+    {"os_version": "9.0",
+     "device": "Samsung Galaxy S9 Plus"},
+
+    {"os_version": "7.0",
+     "device": "Samsung Galaxy S8"},
+
+    {"os_version": "11",
+     "device": "iPad 6th"}
+
 ]
 
 
 def run_many_tests(remote):
     for variation in variations:
         for url in landing_urls:
-            run_test(testname, url, variation, remote)
+            for item in devices:
+                run_test(testname, url, variation, os_version=item['os_version'],
+                         device=item['device'], remote=remote)
 
 
 # run_many_tests(remote=False)
